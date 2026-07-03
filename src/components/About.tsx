@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Activity, Award } from 'lucide-react';
+import doctorPortrait from '../assets/doctor-portrait.jpg';
 
 export const About: React.FC = () => {
   return (
@@ -24,7 +25,7 @@ export const About: React.FC = () => {
             <div className="rounded-2xl overflow-hidden luxury-shadow aspect-[4/5] relative group border-4 border-white">
               <img
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFpuBQOXK_bchYtltJ2nPzgphXfgrG5Y6Jy-0t_yWbRQyuoIhgSxAonMxFf_cbiG3FFwgOVzebwtzggDYRZ-wxTr5LznA3xVMONlWxl38Yleb_D1EALUZgHgvzBjPKNDUpV1YgaHOSBLMV9Ba5M1dSF1iYvGe64oB-0Sh0z3uJHqE4UO5IdCD3KwWjFJPD6tm0-VRGEs9fZk310JZNKOLlEGvj2MSV4_u7SBSyWCiSwCFyCe9TKa-b4pR4yoky_50zXt-7mpXcnWkQ"
+                src={doctorPortrait}
                 alt="Dr. Aamir Dogra portrait"
               />
               <div className="absolute inset-0 bg-primary-container/10 group-hover:opacity-0 transition-opacity duration-300"></div>
