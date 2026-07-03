@@ -4,14 +4,14 @@ import { Phone, Calendar } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
-    <section id="top" className="relative min-h-[85vh] flex items-center overflow-hidden">
+    <section id="top" className="relative min-h-[70vh] md:min-h-[85vh] flex items-center overflow-hidden">
       {/* Background Image & Gradient Overlays */}
       <div className="absolute inset-0 z-0 select-none">
         <div className="absolute inset-0 bg-gradient-to-r from-[#f7f9fb] via-[#f7f9fb]/90 to-transparent z-10 hidden md:block"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#f7f9fb] via-[#f7f9fb]/80 to-transparent z-10 md:hidden"></div>
         <img
           className="w-full h-full object-cover object-[center_right] md:object-right"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUI1qegcudXs2iAOoAw5MF42OMf_3Udu29kYxkfGL9LmWdOCnFfbqSvM6OmHye02StSoMw0jWHzz_3W8qKQDCxK_sCchQa4bmcS8cwbZ58GTev62FtrrqxNteO8xcxSRKYTE6H4NiBv9XigNzcX10SqjX9bJqPKBO3r4fG1X6ZTZXgqCId1XfofECYxZ5rBHW8b5iWWpRRBnlkbDI2CY2iY-YIv1M5faRiJXEJ6hTTFyMPQKX1WjHbsA4ELHrCvIpSQXwgwNyuczih"
+          src="https://lh3.googleusercontent.com/aida/AP1WRLup_4KC-AmYdgF7S5UZYk1VC1p5Xf2lKoA16wwP3dxl6wTmib1QNJoQ--2ZcrDQavbnE4MVMgHAIISzjxel7HPPx5Zslvyz-9XgtWuJk_6TQugXhpKS2Vg6QM670sR3gkybHGQwVr9GEXGM77x-DN8IRua7nKIpVhZq9h5N7Ne4ku4v08urB6qtF1kVmEv6phbWGOAQ2OXtB3B7nHmOFYp5T00V8UEbodgkwMJHkCkyAG_FB9fMCSZqCUub"
           alt="Dr. Aamir Dogra Pediatric Clinic Interior"
         />
       </div>

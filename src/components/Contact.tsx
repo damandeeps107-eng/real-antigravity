@@ -38,9 +38,9 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-12 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-16">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Details Column */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}

@@ -52,9 +52,9 @@ const App: React.FC = () => {
             <EmergencyCare />
 
             {/* Testimonials & FAQ Section */}
-            <section className="py-20 bg-white" id="testimonials">
+            <section className="py-12 md:py-20 bg-white" id="testimonials">
               <div className="max-w-7xl mx-auto px-6 md:px-16">
-                <div className="grid lg:grid-cols-2 gap-16 items-start">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
                   <Testimonials />
                   <FAQ />
                 </div>

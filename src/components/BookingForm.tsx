@@ -44,7 +44,7 @@ export const BookingForm: React.FC = () => {
   };
 
   return (
-    <section id="booking" className="py-20 bg-[#f7f9fb]">
+    <section id="booking" className="py-12 md:py-20 bg-[#f7f9fb]">
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

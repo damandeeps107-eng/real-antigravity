@@ -116,7 +116,7 @@ export const Services: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-[#f7f9fb]">
+    <section id="services" className="py-12 md:py-20 bg-[#f7f9fb]">
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         {/* Title Section */}
         <div className="text-center mb-16">

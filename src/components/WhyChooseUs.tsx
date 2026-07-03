@@ -22,9 +22,9 @@ export const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <section id="why-choose-us" className="py-20 bg-white">
+    <section id="why-choose-us" className="py-12 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-16">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Points list */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}

@@ -6,17 +6,17 @@ export const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="py-20 bg-white relative overflow-hidden"
+      className="py-12 md:py-20 bg-white relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-16 relative z-10">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Portrait Container */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7 }}
-            className="relative"
+            className="relative max-w-[280px] sm:max-w-sm md:max-w-none mx-auto mb-10 md:mb-0"
           >
             {/* Design accents */}
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-tertiary-fixed rounded-2xl -z-10 shadow-sm opacity-60"></div>
@@ -24,7 +24,7 @@ export const About: React.FC = () => {
             <div className="rounded-2xl overflow-hidden luxury-shadow aspect-[4/5] relative group border-4 border-white">
               <img
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUI1qegcudXs2iAOoAw5MF42OMf_3Udu29kYxkfGL9LmWdOCnFfbqSvM6OmHye02StSoMw0jWHzz_3W8qKQDCxK_sCchQa4bmcS8cwbZ58GTev62FtrrqxNteO8xcxSRKYTE6H4NiBv9XigNzcX10SqjX9bJqPKBO3r4fG1X6ZTZXgqCId1XfofECYxZ5rBHW8b5iWWpRRBnlkbDI2CY2iY-YIv1M5faRiJXEJ6hTTFyMPQKX1WjHbsA4ELHrCvIpSQXwgwNyuczih"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFpuBQOXK_bchYtltJ2nPzgphXfgrG5Y6Jy-0t_yWbRQyuoIhgSxAonMxFf_cbiG3FFwgOVzebwtzggDYRZ-wxTr5LznA3xVMONlWxl38Yleb_D1EALUZgHgvzBjPKNDUpV1YgaHOSBLMV9Ba5M1dSF1iYvGe64oB-0Sh0z3uJHqE4UO5IdCD3KwWjFJPD6tm0-VRGEs9fZk310JZNKOLlEGvj2MSV4_u7SBSyWCiSwCFyCe9TKa-b4pR4yoky_50zXt-7mpXcnWkQ"
                 alt="Dr. Aamir Dogra portrait"
               />
               <div className="absolute inset-0 bg-primary-container/10 group-hover:opacity-0 transition-opacity duration-300"></div>
