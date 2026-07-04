@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useScrollSpy } from '../hooks/useScrollSpy';
 import { Menu, X, Phone, Calendar } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,10 +20,12 @@ export const Navbar: React.FC = () => {
     <header className="sticky top-0 z-40 w-full glass-navbar transition-all duration-300 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 md:px-16 py-4 flex justify-between items-center">
         {/* Brand Logo */}
-        <a href="#top" className="flex items-center gap-2 select-none group">
-          <span className="material-symbols-outlined text-secondary text-3xl font-bold animate-pulse">
-            baby_changing_station
-          </span>
+        <a href="#top" className="flex items-center gap-3 select-none group">
+          <img 
+            src={logo} 
+            alt="Dr. Aamir Dogra Logo" 
+            className="w-10 h-10 object-contain rounded-full border border-secondary/20 shadow-sm transition-transform duration-300 group-hover:scale-105" 
+          />
           <div className="flex flex-col">
             <span className="font-display font-bold text-lg md:text-xl text-primary tracking-tight leading-none">
               Dr. Aamir Dogra
