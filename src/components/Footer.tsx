@@ -20,8 +20,11 @@ export const Footer: React.FC = () => {
               </span>
             </div>
           </div>
-          <p className="text-[#708ab5] font-body text-sm leading-relaxed mb-6">
+          <p className="text-[#708ab5] font-body text-sm leading-relaxed mb-4">
             Providing elite pediatric and neonatal intensive care with compassion and precision.
+          </p>
+          <p className="text-xs text-[#90efef] font-body font-semibold">
+            Clinic: 10:00 AM - 4:00 PM (Mon - Sat)
           </p>
         </div>
 

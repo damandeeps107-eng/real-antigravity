@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Instagram, Share2 } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Share2, Clock } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   const contactDetails = [
@@ -9,6 +9,12 @@ export const Contact: React.FC = () => {
       value: 'Dr Aamir Dogra Paediatrician, Mediways Hospital, Ferozepur Road, Preet Nagar, Ludhiana, Punjab 142027, India',
       icon: <MapPin className="w-6 h-6" />,
       link: 'https://maps.google.com/?q=Dr+Aamir+Dogra+Paediatrician,+Mediways+Hospital,+Ludhiana',
+    },
+    {
+      title: 'Clinic Hours',
+      value: 'Mon - Sat: 10:00 AM - 4:00 PM (Emergency: 24/7)',
+      icon: <Clock className="w-6 h-6" />,
+      link: '#booking',
     },
     {
       title: 'Emergency Line',
