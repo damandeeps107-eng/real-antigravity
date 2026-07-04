@@ -28,6 +28,12 @@ export const Contact: React.FC = () => {
       icon: <Mail className="w-6 h-6" />,
       link: 'mailto:care@draamirdogra.com',
     },
+    {
+      title: 'Instagram Handle',
+      value: '@draamirdograpaeds',
+      icon: <Instagram className="w-6 h-6" />,
+      link: 'https://www.instagram.com/draamirdograpaeds?igsh=MXNlbGdtdGY0MG4yMQ%3D%3D&utm_source=qr',
+    },
   ];
 
   const handleShare = () => {

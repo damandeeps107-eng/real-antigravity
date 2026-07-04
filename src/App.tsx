@@ -12,6 +12,7 @@ import { BookingForm } from './components/BookingForm';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { FloatingActions } from './components/FloatingActions';
+import { AyushmanBharat } from './components/AyushmanBharat';
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -47,6 +48,9 @@ const App: React.FC = () => {
 
             {/* Why Choose Us */}
             <WhyChooseUs />
+
+            {/* Ayushman Bharat Support */}
+            <AyushmanBharat />
 
             {/* Emergency Care (High contrast) */}
             <EmergencyCare />
