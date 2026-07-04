@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, CalendarDays } from 'lucide-react';
+import upiQr from '../assets/upi-qr.jpg';
 
 export const BookingForm: React.FC = () => {
   const [parentName, setParentName] = useState('');
@@ -10,6 +11,7 @@ export const BookingForm: React.FC = () => {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('Morning (10 AM - 1 PM)');
   const [reason, setReason] = useState('');
+  const [isPayModalOpen, setIsPayModalOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -65,19 +67,43 @@ export const BookingForm: React.FC = () => {
               <h2 className="font-display font-extrabold text-3xl md:text-4xl text-white mb-6 leading-tight">
                 Schedule a Consultation
               </h2>
-              <p className="text-[#708ab5] font-body text-base mb-10 leading-relaxed">
+              <p className="text-[#708ab5] font-body text-base mb-6 leading-relaxed">
                 Select a preferred date and time for your visit. Our concierge team will confirm your appointment within 30 minutes.
               </p>
 
-              <ul className="space-y-6">
+              {/* Payment Details Card */}
+              <div className="bg-[#f7f9fb]/5 backdrop-blur-md border border-white/10 rounded-xl p-5 mb-6 text-left">
+                <h4 className="font-display font-bold text-xs text-[#90efef] uppercase tracking-wider mb-3">
+                  Consultation Fee Payment
+                </h4>
+                <div className="flex gap-4 items-center">
+                  <div 
+                    className="w-16 h-16 rounded-lg overflow-hidden border border-white/20 bg-white p-1 flex-shrink-0 cursor-zoom-in group relative" 
+                    onClick={() => setIsPayModalOpen(true)}
+                  >
+                    <img src={upiQr} alt="UPI QR Code" className="w-full h-full object-contain" />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-[9px] text-white font-bold font-body">
+                      ZOOM
+                    </div>
+                  </div>
+                  <div className="flex-grow space-y-1">
+                    <p className="text-white text-xs font-semibold">Pay via any UPI App</p>
+                    <p className="text-[#708ab5] text-[9px] uppercase font-bold tracking-wider">UPI ID</p>
+                    <div className="flex items-center gap-1.5 bg-black/25 px-2 py-1 rounded border border-white/5 select-all">
+                      <span className="text-white font-mono text-[10px] font-bold select-all">9877125925@ptsbi</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <ul className="space-y-4">
                 {[
                   'Priority Appointments for Newborns',
                   'Premium Concierge Check-in',
-                  'Digital Prescription Records',
                 ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-4 text-white">
-                    <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0" />
-                    <span className="font-body text-sm font-semibold">{item}</span>
+                  <li key={index} className="flex items-center gap-3 text-white">
+                    <CheckCircle2 className="w-4 h-4 text-gold flex-shrink-0" />
+                    <span className="font-body text-xs font-semibold">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -219,6 +245,27 @@ export const BookingForm: React.FC = () => {
           </div>
         </motion.div>
       </div>
+      {/* QR Code Lightbox Modal */}
+      {isPayModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-6" onClick={() => setIsPayModalOpen(false)}>
+          <div className="relative max-w-sm w-full bg-white rounded-2xl p-6 text-center luxury-shadow animate-scale-up" onClick={(e) => e.stopPropagation()}>
+            <button 
+              onClick={() => setIsPayModalOpen(false)}
+              className="absolute top-4 right-4 text-primary hover:text-secondary p-1"
+            >
+              <span className="material-symbols-outlined text-2xl font-bold">close</span>
+            </button>
+            <h3 className="font-display font-extrabold text-lg text-[#002147] mb-2">Dr. Aamir Dogra</h3>
+            <p className="text-xs text-on-surface-variant font-body mb-4">Scan with any UPI App to pay</p>
+            <div className="max-w-[260px] mx-auto rounded-xl border border-outline-variant/35 overflow-hidden p-2 bg-[#f7f9fb] mb-4">
+              <img src={upiQr} alt="UPI QR Code Full" className="w-full h-auto" />
+            </div>
+            <p className="text-sm font-mono font-bold text-primary bg-[#f7f9fb] py-2 rounded-lg border border-outline-variant/20 select-all">
+              9877125925@ptsbi
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
