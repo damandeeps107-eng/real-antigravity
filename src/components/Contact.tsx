@@ -6,9 +6,9 @@ export const Contact: React.FC = () => {
   const contactDetails = [
     {
       title: 'Clinic Address',
-      value: 'Premium Health Centre, Sector 15, Chandigarh, India',
+      value: 'Dr Aamir Dogra Paediatrician, Mediways Hospital, Ferozepur Road, Preet Nagar, Ludhiana, Punjab 142027, India',
       icon: <MapPin className="w-6 h-6" />,
-      link: 'https://maps.google.com/?q=Sector+15,+Chandigarh',
+      link: 'https://maps.google.com/?q=Dr+Aamir+Dogra+Paediatrician,+Mediways+Hospital,+Ludhiana',
     },
     {
       title: 'Emergency Line',
@@ -89,7 +89,7 @@ export const Contact: React.FC = () => {
             {/* Socials & Share Buttons */}
             <div className="flex gap-4 pt-4">
               <a
-                href="https://instagram.com/draamirdograpaeds"
+                href="https://www.instagram.com/draamirdograpaeds?igsh=MXNlbGdtdGY0MG4yMQ%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-11 h-11 border border-outline/35 rounded-full flex items-center justify-center text-primary hover:bg-[#000a1e] hover:text-white transition-all duration-300"
@@ -120,7 +120,7 @@ export const Contact: React.FC = () => {
             {/* Real Interactive Google Map */}
             <iframe
               title="Dr. Aamir Dogra Pediatric Clinic Map Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13718.397034731671!2d76.7645167!3d30.757912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fed19875c7423%3A0xe54d8961be49386!2sSector%2015%2C%20Chandigarh%2C%20160015!5e0!3m2!1sen!2sin!4v1720000000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3423.8340476059965!2d75.79513077555364!3d30.8974950796328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a830af608144b%3A0x678b87d159049a18!2sMediways%20Hospital!5e0!3m2!1sen!2sin!4v1719900000000!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}

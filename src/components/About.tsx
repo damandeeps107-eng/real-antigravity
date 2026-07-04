@@ -42,7 +42,7 @@ export const About: React.FC = () => {
               <div className="flex items-center gap-3">
                 <Award className="w-8 h-8 text-gold" />
                 <div className="text-left">
-                  <div className="text-2xl font-display font-extrabold text-white leading-none">15+</div>
+                  <div className="text-2xl font-display font-extrabold text-white leading-none">5+</div>
                   <div className="font-body text-[10px] text-on-primary-container/80 font-bold uppercase tracking-widest mt-1">
                     Years of Excellence
                   </div>

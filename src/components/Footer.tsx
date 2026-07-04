@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
             Stay updated with child health tips and clinic updates.
           </p>
           <a
-            href="https://instagram.com/draamirdograpaeds"
+            href="https://www.instagram.com/draamirdograpaeds?igsh=MXNlbGdtdGY0MG4yMQ%3D%3D&utm_source=qr"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-[#90efef] font-body text-sm font-semibold hover:underline"
