@@ -88,10 +88,14 @@ export const BookingForm: React.FC = () => {
                   </div>
                   <div className="flex-grow space-y-1">
                     <p className="text-white text-xs font-semibold">Pay via any UPI App</p>
-                    <p className="text-[#708ab5] text-[9px] uppercase font-bold tracking-wider">UPI ID</p>
-                    <div className="flex items-center gap-1.5 bg-black/25 px-2 py-1 rounded border border-white/5 select-all">
-                      <span className="text-white font-mono text-[10px] font-bold select-all">9877125925@ptsbi</span>
-                    </div>
+                    <p className="text-[#708ab5] text-[9px] uppercase font-bold tracking-wider">UPI ID (Click to Pay)</p>
+                    <a 
+                      href="upi://pay?pa=9877125925@ptsbi&pn=Dr%20Aamir%20Dogra&cu=INR"
+                      className="flex items-center justify-between gap-1.5 bg-black/25 px-2.5 py-1.5 rounded border border-white/5 hover:border-[#90efef]/40 transition-colors group/link cursor-pointer"
+                    >
+                      <span className="text-white font-mono text-[10px] font-bold">9877125925@ptsbi</span>
+                      <span className="text-[8px] text-[#90efef] font-bold uppercase group-hover/link:underline">Pay</span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -260,9 +264,12 @@ export const BookingForm: React.FC = () => {
             <div className="max-w-[260px] mx-auto rounded-xl border border-outline-variant/35 overflow-hidden p-2 bg-[#f7f9fb] mb-4">
               <img src={upiQr} alt="UPI QR Code Full" className="w-full h-auto" />
             </div>
-            <p className="text-sm font-mono font-bold text-primary bg-[#f7f9fb] py-2 rounded-lg border border-outline-variant/20 select-all">
+            <a 
+              href="upi://pay?pa=9877125925@ptsbi&pn=Dr%20Aamir%20Dogra&cu=INR"
+              className="block text-sm font-mono font-bold text-primary bg-[#f7f9fb] hover:bg-secondary-container/20 py-2.5 rounded-lg border border-outline-variant/20 transition-colors cursor-pointer"
+            >
               9877125925@ptsbi
-            </p>
+            </a>
           </div>
         </div>
       )}

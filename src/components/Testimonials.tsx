@@ -14,17 +14,17 @@ export const Testimonials: React.FC = () => {
   const testimonials: TestimonialItem[] = [
     {
       id: 1,
-      name: 'Mrs. Shweta Singh',
+      name: 'Shweta S.',
       location: 'Ludhiana',
       rating: 5,
-      text: `"Dr. Dogra's expertise saved our newborn when he was in critical condition. His calm demeanor and AIIMS-trained precision gave us the confidence we needed during a terrifying time."`,
+      text: `"Dr. Amir Dogra's expertise saved our newborn when he was in critical condition. His calm demeanor and AIIMS-trained precision gave us the confidence we needed during a terrifying time."`,
     },
     {
       id: 2,
-      name: 'Dr. Rajat Verma',
+      name: 'Rajat V.',
       location: 'Ludhiana',
       rating: 5,
-      text: `"The best pediatrician in the city. He doesn't over-prescribe medicines and explains everything so clearly. The clinic environment is also very high-end and clean."`,
+      text: `"Dr. Amir Dogra is the best pediatrician in the city. He doesn't over-prescribe medicines and explains everything so clearly. The clinic environment is also very high-end and clean."`,
     },
   ];
 
