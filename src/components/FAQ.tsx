@@ -13,7 +13,7 @@ export const FAQ: React.FC = () => {
     {
       id: 1,
       question: 'What are the clinic timings?',
-      answer: 'The clinic is open for general consultations from 10:00 AM to 1:00 PM and 5:00 PM to 8:30 PM. Emergency care is available 24/7 via phone call.',
+      answer: 'The clinic is open for general consultations from 10:00 AM to 4:00 PM, Monday to Saturday. Pediatric emergency care is available 24/7, 7 days a week.',
     },
     {
       id: 2,

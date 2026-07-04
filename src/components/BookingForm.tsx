@@ -185,7 +185,7 @@ export const BookingForm: React.FC = () => {
                   id="preferred-time"
                 >
                   <option value="Morning (10 AM - 1 PM)">Morning (10 AM - 1 PM)</option>
-                  <option value="Evening (5 PM - 8 PM)">Evening (5 PM - 8 PM)</option>
+                  <option value="Afternoon (1 PM - 4 PM)">Afternoon (1 PM - 4 PM)</option>
                 </select>
               </div>
 
