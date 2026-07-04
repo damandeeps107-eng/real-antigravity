@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, HeartPulse, ArrowRight } from 'lucide-react';
+import { ShieldCheck, HeartPulse, Phone } from 'lucide-react';
 
 export const AyushmanBharat: React.FC = () => {
   return (
@@ -39,12 +39,12 @@ export const AyushmanBharat: React.FC = () => {
             
             <div className="pt-2">
               <a
-                href="#booking"
+                href="tel:+919877125925"
                 className="inline-flex items-center justify-center gap-2 bg-secondary text-white px-8 py-3.5 rounded-full font-body text-sm font-bold shadow-md hover:bg-[#004f4f] hover:shadow-lg transition-all active:scale-[0.98] duration-200"
                 id="ayushman-contact-btn"
               >
                 <span>Contact Now</span>
-                <ArrowRight className="w-4 h-4" />
+                <Phone className="w-4 h-4" />
               </a>
             </div>
           </motion.div>
