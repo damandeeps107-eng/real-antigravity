@@ -73,9 +73,14 @@ export const BookingForm: React.FC = () => {
 
               {/* Payment Details Card */}
               <div className="bg-[#f7f9fb]/5 backdrop-blur-md border border-white/10 rounded-xl p-5 mb-6 text-left">
-                <h4 className="font-display font-bold text-xs text-[#90efef] uppercase tracking-wider mb-3">
-                  Consultation Fee Payment
-                </h4>
+                <div className="flex justify-between items-center mb-3">
+                  <h4 className="font-display font-bold text-xs text-[#90efef] uppercase tracking-wider">
+                    Consultation Fee
+                  </h4>
+                  <span className="bg-[#ffe088]/10 text-gold-light text-xs font-bold px-2 py-0.5 rounded border border-gold-light/20">
+                    ₹300
+                  </span>
+                </div>
                 <div className="flex gap-4 items-center">
                   <div 
                     className="w-16 h-16 rounded-lg overflow-hidden border border-white/20 bg-white p-1 flex-shrink-0 cursor-zoom-in group relative" 
@@ -87,10 +92,10 @@ export const BookingForm: React.FC = () => {
                     </div>
                   </div>
                   <div className="flex-grow space-y-1">
-                    <p className="text-white text-xs font-semibold">Pay via any UPI App</p>
+                    <p className="text-white text-xs font-semibold">Pay ₹300 via any UPI App</p>
                     <p className="text-[#708ab5] text-[9px] uppercase font-bold tracking-wider">UPI ID (Click to Pay)</p>
                     <a 
-                      href="upi://pay?pa=9877125925@ptsbi&pn=Dr%20Aamir%20Dogra&cu=INR"
+                      href="upi://pay?pa=9877125925@ptsbi&pn=Dr%20Aamir%20Dogra&cu=INR&am=300"
                       className="flex items-center justify-between gap-1.5 bg-black/25 px-2.5 py-1.5 rounded border border-white/5 hover:border-[#90efef]/40 transition-colors group/link cursor-pointer"
                     >
                       <span className="text-white font-mono text-[10px] font-bold">9877125925@ptsbi</span>
@@ -259,16 +264,17 @@ export const BookingForm: React.FC = () => {
             >
               <span className="material-symbols-outlined text-2xl font-bold">close</span>
             </button>
-            <h3 className="font-display font-extrabold text-lg text-[#002147] mb-2">Dr. Aamir Dogra</h3>
+            <h3 className="font-display font-extrabold text-lg text-[#002147] mb-1">Dr. Aamir Dogra</h3>
+            <p className="text-sm font-bold text-secondary font-body mb-2">Consultation Fee: ₹300</p>
             <p className="text-xs text-on-surface-variant font-body mb-4">Scan with any UPI App to pay</p>
             <div className="max-w-[260px] mx-auto rounded-xl border border-outline-variant/35 overflow-hidden p-2 bg-[#f7f9fb] mb-4">
               <img src={upiQr} alt="UPI QR Code Full" className="w-full h-auto" />
             </div>
             <a 
-              href="upi://pay?pa=9877125925@ptsbi&pn=Dr%20Aamir%20Dogra&cu=INR"
+              href="upi://pay?pa=9877125925@ptsbi&pn=Dr%20Aamir%20Dogra&cu=INR&am=300"
               className="block text-sm font-mono font-bold text-primary bg-[#f7f9fb] hover:bg-secondary-container/20 py-2.5 rounded-lg border border-outline-variant/20 transition-colors cursor-pointer"
             >
-              9877125925@ptsbi
+              9877125925@ptsbi (Pay ₹300)
             </a>
           </div>
         </div>
