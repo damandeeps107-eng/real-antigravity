@@ -17,21 +17,24 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full glass-navbar transition-all duration-300 shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 md:px-16 py-4 flex justify-between items-center">
+    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md transition-all duration-300 shadow-sm border-b border-secondary/10">
+      <div className="max-w-7xl mx-auto px-6 md:px-16 py-3 flex justify-between items-center">
         {/* Brand Logo */}
         <a href="#top" className="flex items-center gap-3 select-none group">
-          <img 
-            src={logo} 
-            alt="Dr. Aamir Dogra Logo" 
-            className="w-10 h-10 object-contain rounded-full border border-secondary/20 shadow-sm transition-transform duration-300 group-hover:scale-105" 
-          />
-          <div className="flex flex-col">
-            <span className="font-display font-bold text-lg md:text-xl text-primary tracking-tight leading-none">
+          <div className="relative flex-shrink-0">
+            <img 
+              src={logo} 
+              alt="Dr. Aamir Dogra Logo" 
+              className="w-13 h-13 object-contain rounded-full shadow-md transition-transform duration-300 group-hover:scale-105 border-2 border-white ring-2 ring-secondary/20 bg-white" 
+            />
+            <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 rounded-full border-2 border-white ring-1 ring-emerald-500/30" title="Clinic Open Today"></span>
+          </div>
+          <div className="flex flex-col text-left">
+            <span className="font-display font-black text-lg md:text-xl text-primary tracking-tight leading-none group-hover:text-secondary transition-colors">
               Dr. Aamir Dogra
             </span>
-            <span className="font-body text-[10px] text-secondary font-semibold uppercase tracking-widest mt-0.5">
-              Pediatric &amp; Newborn Care
+            <span className="font-body text-[10px] text-secondary font-bold uppercase tracking-widest mt-1">
+              Paediatrics &bull; MBChB, MRCPCH
             </span>
           </div>
         </a>
@@ -86,12 +89,12 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer Overlay */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 top-[73px] z-30 bg-[#000a1e]/40 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
+        <div className="lg:hidden fixed inset-0 top-[68px] z-40 bg-[#000a1e]/40 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
       )}
 
       {/* Mobile Drawer Menu */}
       <div
-        className={`lg:hidden fixed right-0 top-[73px] h-[calc(100vh-73px)] w-72 bg-white z-40 transition-transform duration-300 ease-in-out luxury-shadow transform ${
+        className={`lg:hidden fixed right-0 top-[68px] h-[calc(100vh-68px)] w-72 bg-white z-50 transition-transform duration-300 ease-in-out shadow-2xl transform ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

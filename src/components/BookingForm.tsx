@@ -11,6 +11,7 @@ export const BookingForm: React.FC = () => {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('Morning (10 AM - 1 PM)');
   const [reason, setReason] = useState('');
+  const [paymentMode, setPaymentMode] = useState<'clinic' | 'upi'>('clinic');
   const [isPayModalOpen, setIsPayModalOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -30,7 +31,8 @@ export const BookingForm: React.FC = () => {
 - *Phone Number:* ${phone.trim()}
 - *Preferred Date:* ${date}
 - *Preferred Time:* ${time}
-- *Reason for Visit:* ${reason.trim() || 'General Consultation'}`;
+- *Reason for Visit:* ${reason.trim() || 'General Consultation'}
+- *Payment Preference:* ${paymentMode === 'clinic' ? 'Pay at Clinic (₹300)' : 'Online UPI Advance (₹300)'}`;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/919877125925?text=${encodedMessage}`;
@@ -232,15 +234,59 @@ export const BookingForm: React.FC = () => {
                 <textarea
                   value={reason}
                   onChange={(e) => setReason(e.target.value)}
-                  rows={3}
+                  rows={2}
                   className="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all font-body text-sm text-[#191c1e] resize-none"
                   placeholder="Brief description of symptoms, vaccination queries, or checkups..."
                   id="reason-for-visit"
                 />
               </div>
 
+              {/* Consultation Payment Preference */}
+              <div className="col-span-2 bg-[#f7f9fb] p-4 rounded-xl border border-outline-variant/30">
+                <label className="block font-body text-xs font-bold text-primary uppercase tracking-wider mb-2">
+                  Consultation Fee: ₹300 (Select Payment Option)
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <label className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all ${
+                    paymentMode === 'clinic' 
+                      ? 'border-secondary bg-white shadow-sm ring-1 ring-secondary/30' 
+                      : 'border-outline-variant/30 hover:bg-white'
+                  }`}>
+                    <input 
+                      type="radio" 
+                      name="paymentMode" 
+                      checked={paymentMode === 'clinic'} 
+                      onChange={() => setPaymentMode('clinic')}
+                      className="accent-[#006a6a]"
+                    />
+                    <div className="text-left">
+                      <div className="font-body text-xs font-bold text-primary">Pay at Clinic</div>
+                      <div className="text-[10px] text-on-surface-variant">Pay ₹300 during visit (Cash/UPI)</div>
+                    </div>
+                  </label>
+
+                  <label className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all ${
+                    paymentMode === 'upi' 
+                      ? 'border-secondary bg-white shadow-sm ring-1 ring-secondary/30' 
+                      : 'border-outline-variant/30 hover:bg-white'
+                  }`}>
+                    <input 
+                      type="radio" 
+                      name="paymentMode" 
+                      checked={paymentMode === 'upi'} 
+                      onChange={() => setPaymentMode('upi')}
+                      className="accent-[#006a6a]"
+                    />
+                    <div className="text-left">
+                      <div className="font-body text-xs font-bold text-primary">Pay Online via UPI</div>
+                      <div className="text-[10px] text-on-surface-variant">Instant QR / 9877125925@ptsbi</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
               {/* Submit Button */}
-              <div className="col-span-2 mt-2">
+              <div className="col-span-2 mt-1">
                 <button
                   type="submit"
                   className="w-full flex items-center justify-center gap-2 bg-primary-container text-white py-4 rounded-full font-display font-bold text-base hover:bg-[#003166] transition-all duration-300 active:scale-[0.98] shadow-md hover:shadow-lg cursor-pointer"
@@ -249,6 +295,9 @@ export const BookingForm: React.FC = () => {
                   <CalendarDays className="w-5 h-5 text-gold-light" />
                   <span>Confirm Booking via WhatsApp</span>
                 </button>
+                <p className="text-center text-[11px] text-on-surface-variant mt-2 font-body">
+                  No pre-registration charges. You will be redirected to WhatsApp to confirm your slot.
+                </p>
               </div>
             </form>
           </div>

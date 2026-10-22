@@ -12,14 +12,14 @@ export const Footer: React.FC = () => {
             <img 
               src={logo} 
               alt="Dr. Aamir Dogra Logo" 
-              className="w-10 h-10 object-contain rounded-full border border-white/10 bg-white p-0.5 shadow-sm" 
+              className="w-16 h-16 object-contain rounded-full shadow-lg border-2 border-white/20 bg-white" 
             />
             <div className="flex flex-col">
               <span className="font-display font-extrabold text-lg text-white leading-none">
                 Dr. Aamir Dogra
               </span>
-              <span className="font-body text-[10px] text-[#708ab5] font-semibold uppercase tracking-widest mt-1">
-                Pediatric Care Specialist
+              <span className="font-body text-[10px] text-gold-light font-semibold uppercase tracking-widest mt-1">
+                Paediatrics &bull; MBChB, MRCPCH
               </span>
             </div>
           </div>

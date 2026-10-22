@@ -20,15 +20,16 @@ export const About: React.FC = () => {
             className="relative max-w-[280px] sm:max-w-sm md:max-w-none mx-auto mb-10 md:mb-0"
           >
             {/* Design accents */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-tertiary-fixed rounded-2xl -z-10 shadow-sm opacity-60"></div>
+            <div className="absolute -top-3 -left-3 w-32 h-32 bg-secondary/15 rounded-full blur-xl -z-10"></div>
+            <div className="absolute -bottom-3 -right-3 w-36 h-36 bg-[#ffe088]/30 rounded-full blur-xl -z-10"></div>
             
-            <div className="rounded-2xl overflow-hidden luxury-shadow aspect-[4/5] relative group border-4 border-white">
+            <div className="rounded-full overflow-hidden luxury-shadow aspect-square relative group border-4 border-white shadow-2xl max-w-[340px] sm:max-w-[380px] mx-auto bg-white">
               <img
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="w-full h-full object-cover scale-[1.03] group-hover:scale-108 transition-transform duration-700 ease-out"
                 src={doctorPortrait}
                 alt="Dr. Aamir Dogra portrait"
               />
-              <div className="absolute inset-0 bg-primary-container/10 group-hover:opacity-0 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-primary-container/5 group-hover:opacity-0 transition-opacity duration-300"></div>
             </div>
 
             {/* Float Experience Badge */}
@@ -66,31 +67,31 @@ export const About: React.FC = () => {
               World-Class Expertise in Child Healthcare
             </h2>
             <p className="text-on-surface-variant font-body text-lg leading-relaxed mb-6">
-              Dr. Aamir Dogra is a distinguished <span className="text-primary font-semibold">Consultant Pediatrician</span> and <span className="text-primary font-semibold">Newborn Specialist Care Intensivist</span>, bringing elite clinical training from India's premier medical institutions — <span className="text-secondary font-bold">AIIMS Delhi and PGI Chandigarh</span>.
+              Dr. Aamir Dogra <span className="text-secondary font-bold text-sm">(MBChB, MRCPCH)</span> is a distinguished <span className="text-primary font-semibold">Consultant Paediatrician</span> and <span className="text-primary font-semibold">Newborn Specialist Care Intensivist</span>, bringing elite clinical training from India's premier medical institutions — <span className="text-secondary font-bold">AIIMS Delhi and PGI Chandigarh</span>.
             </p>
             <p className="text-on-surface-variant font-body text-base leading-relaxed mb-8">
-              His approach combines cutting-edge medical protocols with a compassionate, child-centric philosophy. He specializes in managing critical neonatal conditions and complex pediatric cases, ensuring that every child receives the highest tier of concierge medical attention.
+              His approach combines international clinical excellence with a warm, child-centric philosophy. He specializes in neonatal intensive care (NICU), premature infant tracking, and routine pediatric illnesses, ensuring every child receives comforting, zero-fear medical attention.
             </p>
 
             {/* Quick credentials cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-5 bg-white rounded-xl border border-outline-variant/30 luxury-shadow flex items-start gap-4 hover:border-secondary/40 transition-colors duration-300">
-                <div className="p-2.5 bg-secondary-container/20 rounded-lg text-secondary">
-                  <GraduationCap className="w-6 h-6" />
+              <div className="p-4 bg-white rounded-xl border border-outline-variant/30 luxury-shadow flex items-start gap-3.5 hover:border-secondary/40 transition-colors duration-300">
+                <div className="p-2 bg-secondary-container/20 rounded-lg text-secondary">
+                  <GraduationCap className="w-5 h-5" />
                 </div>
                 <div className="text-left">
                   <h4 className="font-display font-bold text-sm text-primary">AIIMS &amp; PGI Alumni</h4>
-                  <p className="text-xs text-on-surface-variant mt-1">Trained in top-tier clinical practices.</p>
+                  <p className="text-xs text-on-surface-variant mt-0.5">Top-tier clinical training in child health.</p>
                 </div>
               </div>
 
-              <div className="p-5 bg-white rounded-xl border border-outline-variant/30 luxury-shadow flex items-start gap-4 hover:border-secondary/40 transition-colors duration-300">
-                <div className="p-2.5 bg-secondary-container/20 rounded-lg text-secondary">
-                  <Activity className="w-6 h-6" />
+              <div className="p-4 bg-white rounded-xl border border-outline-variant/30 luxury-shadow flex items-start gap-3.5 hover:border-secondary/40 transition-colors duration-300">
+                <div className="p-2 bg-secondary-container/20 rounded-lg text-secondary">
+                  <Activity className="w-5 h-5" />
                 </div>
                 <div className="text-left">
                   <h4 className="font-display font-bold text-sm text-primary">Newborn Intensivist</h4>
-                  <p className="text-xs text-on-surface-variant mt-1">Specialized in critical care &amp; neonatology.</p>
+                  <p className="text-xs text-on-surface-variant mt-0.5">NICU &amp; critical neonatal life support.</p>
                 </div>
               </div>
             </div>

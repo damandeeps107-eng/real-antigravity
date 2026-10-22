@@ -18,10 +18,10 @@ const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate initial loading sequence for a premium experience
+    // Quick gentle splash sequence
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
+    }, 450);
 
     return () => clearTimeout(timer);
   }, []);
