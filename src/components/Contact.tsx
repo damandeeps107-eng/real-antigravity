@@ -25,9 +25,9 @@ export const Contact: React.FC = () => {
     },
     {
       title: 'Official Email Support',
-      value: 'care@draamirdogra.com',
+      value: 'aamirdogra964737@gmail.com',
       icon: <Mail className="w-5 h-5 text-sky-300" />,
-      link: 'mailto:care@draamirdogra.com',
+      link: 'mailto:aamirdogra964737@gmail.com',
     },
     {
       title: 'Instagram Handle',
