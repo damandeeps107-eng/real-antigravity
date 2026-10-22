@@ -27,7 +27,7 @@ export const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
           Dr. Aamir Dogra
         </h2>
         <p className="mt-1 font-body text-xs font-semibold text-teal-300">
-          Paediatrics &bull; MBChB, MRCPCH &bull; Mediways Hospital
+          Paediatrics &bull; MBBS, MD, UK-NHS Certified &bull; Mediways Hospital
         </p>
       </div>
     </div>

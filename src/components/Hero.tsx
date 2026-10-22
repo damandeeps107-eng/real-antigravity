@@ -91,7 +91,7 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="font-body text-sm sm:text-base lg:text-lg text-slate-600 mb-6 sm:mb-8 leading-relaxed max-w-xl"
           >
-            From newborn ICU care to joyful milestone checkups. <span className="font-bold text-primary">Dr. Aamir Dogra (MBChB, MRCPCH)</span> combines premier medical expertise with a warm, fear-free environment for children.
+            From newborn ICU care to joyful milestone checkups. <span className="font-bold text-primary">Dr. Aamir Dogra (MBBS, MD, UK-NHS Certified)</span> combines premier medical expertise with a warm, fear-free environment for children.
           </motion.p>
 
           {/* Action Buttons */}

@@ -63,7 +63,7 @@ export const Navbar: React.FC = () => {
               <span className="text-[11px] text-teal-700 font-bold uppercase tracking-wider mt-1 flex items-center gap-1">
                 <span>Paediatrician</span>
                 <span className="text-slate-300">&bull;</span>
-                <span className="text-slate-600 font-semibold">MBChB, MRCPCH</span>
+                <span className="text-slate-600 font-semibold">MBBS, MD, UK-NHS Certified</span>
               </span>
             </div>
           </a>

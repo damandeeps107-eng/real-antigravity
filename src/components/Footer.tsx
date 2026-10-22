@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
                 Dr. Aamir Dogra
               </span>
               <span className="font-body text-[10px] text-amber-300 font-bold uppercase tracking-widest mt-0.5">
-                Paediatrics &bull; MBChB, MRCPCH
+                Paediatrics &bull; MBBS, MD, UK-NHS Certified
               </span>
             </div>
           </div>

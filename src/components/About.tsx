@@ -70,7 +70,7 @@ export const About: React.FC = () => {
             </h2>
 
             <p className="text-slate-600 font-body text-base leading-relaxed">
-              <strong className="text-primary font-bold">Dr. Aamir Dogra (MBChB, MRCPCH)</strong> is a leading <span className="text-teal-800 font-bold">Consultant Paediatrician</span> and <span className="text-teal-800 font-bold">Newborn Specialist Care Intensivist</span> at Mediways Hospital, Ludhiana. He brings prestigious clinical training from India's foremost medical institutions — <strong className="text-primary font-bold">AIIMS Delhi and PGI Chandigarh</strong>.
+              <strong className="text-primary font-bold">Dr. Aamir Dogra (MBBS, MD, UK-NHS Certified)</strong> is a leading <span className="text-teal-800 font-bold">Consultant Paediatrician</span> and <span className="text-teal-800 font-bold">Newborn Specialist Care Intensivist</span> at Mediways Hospital, Ludhiana. He brings prestigious clinical training from India's foremost medical institutions — <strong className="text-primary font-bold">AIIMS Delhi and PGI Chandigarh</strong>.
             </p>
 
             <p className="text-slate-600 font-body text-sm leading-relaxed">
