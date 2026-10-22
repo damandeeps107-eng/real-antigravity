@@ -1,99 +1,119 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Activity, Award } from 'lucide-react';
+import { GraduationCap, Activity, Award, CheckCircle2 } from 'lucide-react';
 import doctorPortrait from '../assets/doctor-portrait.jpg';
 
 export const About: React.FC = () => {
   return (
-    <section
-      id="about"
-      className="py-12 md:py-20 bg-white relative overflow-hidden"
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-16 relative z-10">
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-          {/* Portrait Container */}
+    <section id="about" className="py-14 sm:py-20 bg-white relative overflow-hidden">
+      {/* Background Soft Blobs */}
+      <div className="absolute top-10 left-10 w-72 h-72 bg-teal-50 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <div className="absolute bottom-10 right-10 w-80 h-80 bg-amber-50 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 relative z-10">
+        <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
+          {/* Portrait Column (5 cols) */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7 }}
-            className="relative max-w-[280px] sm:max-w-sm md:max-w-none mx-auto mb-10 md:mb-0"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="md:col-span-5 relative max-w-[320px] sm:max-w-sm mx-auto"
           >
-            {/* Design accents */}
-            <div className="absolute -top-3 -left-3 w-32 h-32 bg-secondary/15 rounded-full blur-xl -z-10"></div>
-            <div className="absolute -bottom-3 -right-3 w-36 h-36 bg-[#ffe088]/30 rounded-full blur-xl -z-10"></div>
+            {/* Glowing Pediatric Accent Rings */}
+            <div className="absolute -inset-3 bg-gradient-to-tr from-teal-400/20 via-amber-300/20 to-teal-500/20 rounded-full blur-lg"></div>
             
-            <div className="rounded-full overflow-hidden luxury-shadow aspect-square relative group border-4 border-white shadow-2xl max-w-[340px] sm:max-w-[380px] mx-auto bg-white">
+            {/* Round Portrait Frame */}
+            <div className="relative rounded-full aspect-square overflow-hidden border-4 border-white shadow-2xl bg-gradient-to-b from-teal-50 to-white">
               <img
-                className="w-full h-full object-cover scale-[1.03] group-hover:scale-108 transition-transform duration-700 ease-out"
+                className="w-full h-full object-cover scale-[1.04] hover:scale-108 transition-transform duration-700 ease-out"
                 src={doctorPortrait}
-                alt="Dr. Aamir Dogra portrait"
+                alt="Dr. Aamir Dogra - Consultant Paediatrician"
               />
-              <div className="absolute inset-0 bg-primary-container/5 group-hover:opacity-0 transition-opacity duration-300"></div>
             </div>
 
-            {/* Float Experience Badge */}
+            {/* Experience Floating Badge */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-2xl luxury-shadow hidden sm:block border border-[#2d476f]/30"
+              transition={{ delay: 0.25, duration: 0.5 }}
+              className="absolute -bottom-4 right-2 sm:-bottom-5 sm:right-4 bg-primary text-white py-3 px-5 rounded-2xl shadow-xl border border-white/20 flex items-center gap-3"
             >
-              <div className="flex items-center gap-3">
-                <Award className="w-8 h-8 text-gold" />
-                <div className="text-left">
-                  <div className="text-2xl font-display font-extrabold text-white leading-none">5+</div>
-                  <div className="font-body text-[10px] text-on-primary-container/80 font-bold uppercase tracking-widest mt-1">
-                    Years of Excellence
-                  </div>
+              <div className="p-2 bg-amber-400 text-primary rounded-xl font-bold">
+                <Award className="w-5 h-5 text-slate-900" />
+              </div>
+              <div className="text-left">
+                <div className="text-xl font-display font-black leading-none text-white">5+ Years</div>
+                <div className="text-[10px] text-teal-200 font-bold uppercase tracking-wider mt-0.5">
+                  Clinical Excellence
                 </div>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Description Content */}
+          {/* Bio & Credentials Column (7 cols) */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7 }}
-            className="text-left"
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="md:col-span-7 text-left space-y-5"
           >
-            <span className="text-secondary font-body text-xs font-bold uppercase tracking-widest mb-3 block">
-              Meet The Doctor
-            </span>
-            <h2 className="font-display font-bold text-3xl md:text-4xl text-primary mb-6 leading-tight">
-              World-Class Expertise in Child Healthcare
+            <div className="inline-flex items-center gap-2 bg-teal-50 text-teal-800 font-body text-xs font-bold px-3.5 py-1.5 rounded-full border border-teal-200">
+              <span>🩺</span>
+              <span>Meet Your Child Specialist</span>
+            </div>
+
+            <h2 className="font-display font-black text-2xl sm:text-4xl text-primary leading-tight">
+              World-Class Pediatric Care with a <span className="text-teal-700">Gentle &amp; Caring Touch</span>
             </h2>
-            <p className="text-on-surface-variant font-body text-lg leading-relaxed mb-6">
-              Dr. Aamir Dogra <span className="text-secondary font-bold text-sm">(MBChB, MRCPCH)</span> is a distinguished <span className="text-primary font-semibold">Consultant Paediatrician</span> and <span className="text-primary font-semibold">Newborn Specialist Care Intensivist</span>, bringing elite clinical training from India's premier medical institutions — <span className="text-secondary font-bold">AIIMS Delhi and PGI Chandigarh</span>.
-            </p>
-            <p className="text-on-surface-variant font-body text-base leading-relaxed mb-8">
-              His approach combines international clinical excellence with a warm, child-centric philosophy. He specializes in neonatal intensive care (NICU), premature infant tracking, and routine pediatric illnesses, ensuring every child receives comforting, zero-fear medical attention.
+
+            <p className="text-slate-600 font-body text-base leading-relaxed">
+              <strong className="text-primary font-bold">Dr. Aamir Dogra (MBChB, MRCPCH)</strong> is a leading <span className="text-teal-800 font-bold">Consultant Paediatrician</span> and <span className="text-teal-800 font-bold">Newborn Specialist Care Intensivist</span> at Mediways Hospital, Ludhiana. He brings prestigious clinical training from India's foremost medical institutions — <strong className="text-primary font-bold">AIIMS Delhi and PGI Chandigarh</strong>.
             </p>
 
-            {/* Quick credentials cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-4 bg-white rounded-xl border border-outline-variant/30 luxury-shadow flex items-start gap-3.5 hover:border-secondary/40 transition-colors duration-300">
-                <div className="p-2 bg-secondary-container/20 rounded-lg text-secondary">
-                  <GraduationCap className="w-5 h-5" />
+            <p className="text-slate-600 font-body text-sm leading-relaxed">
+              His approach combines elite evidence-based medicine with a loving, fear-free clinic atmosphere. From critical newborn NICU management to developmental milestone checkups, Dr. Dogra is dedicated to giving every child the healthiest, happiest start in life.
+            </p>
+
+            {/* Credential Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+              <div className="p-4 bg-slate-50/80 rounded-2xl border border-slate-200/70 flex items-start gap-3.5 hover:border-teal-300 transition-colors">
+                <div className="p-2.5 bg-teal-100/70 text-teal-800 rounded-xl flex-shrink-0">
+                  <GraduationCap className="w-5 h-5 text-teal-700" />
                 </div>
-                <div className="text-left">
-                  <h4 className="font-display font-bold text-sm text-primary">AIIMS &amp; PGI Alumni</h4>
-                  <p className="text-xs text-on-surface-variant mt-0.5">Top-tier clinical training in child health.</p>
+                <div>
+                  <h4 className="font-display font-bold text-sm text-primary">AIIMS &amp; PGI Trained</h4>
+                  <p className="text-xs text-slate-500 mt-0.5">Top-tier clinical pediatric &amp; neonatal training.</p>
                 </div>
               </div>
 
-              <div className="p-4 bg-white rounded-xl border border-outline-variant/30 luxury-shadow flex items-start gap-3.5 hover:border-secondary/40 transition-colors duration-300">
-                <div className="p-2 bg-secondary-container/20 rounded-lg text-secondary">
-                  <Activity className="w-5 h-5" />
+              <div className="p-4 bg-slate-50/80 rounded-2xl border border-slate-200/70 flex items-start gap-3.5 hover:border-teal-300 transition-colors">
+                <div className="p-2.5 bg-amber-100/70 text-amber-800 rounded-xl flex-shrink-0">
+                  <Activity className="w-5 h-5 text-amber-700" />
                 </div>
-                <div className="text-left">
+                <div>
                   <h4 className="font-display font-bold text-sm text-primary">Newborn Intensivist</h4>
-                  <p className="text-xs text-on-surface-variant mt-0.5">NICU &amp; critical neonatal life support.</p>
+                  <p className="text-xs text-slate-500 mt-0.5">24/7 NICU, preterm baby &amp; emergency care.</p>
                 </div>
               </div>
+            </div>
+
+            {/* Quick Guarantees */}
+            <div className="flex flex-wrap items-center gap-y-2 gap-x-5 pt-1 text-xs text-slate-700 font-semibold">
+              <span className="flex items-center gap-1.5 text-teal-700">
+                <CheckCircle2 className="w-4 h-4 text-teal-600" />
+                Zero-Fear Clinic Environment
+              </span>
+              <span className="flex items-center gap-1.5 text-teal-700">
+                <CheckCircle2 className="w-4 h-4 text-teal-600" />
+                Transparent ₹300 Consultation Fee
+              </span>
+              <span className="flex items-center gap-1.5 text-teal-700">
+                <CheckCircle2 className="w-4 h-4 text-teal-600" />
+                Ayushman Bharat ₹10 Lakh Accepted
+              </span>
             </div>
           </motion.div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import logo from '../assets/logo.png';
 
 interface LoaderProps {
   isLoading: boolean;
@@ -8,44 +8,27 @@ interface LoaderProps {
 export const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
   return (
     <div
-      className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#000a1e] transition-all duration-700 ${
+      className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#07192f] transition-all duration-500 ${
         isLoading ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >
       <div className="flex flex-col items-center">
-        {/* Heartbeat Animation Container */}
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1, 1.4, 1],
-          }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="relative flex items-center justify-center w-24 h-24"
-        >
-          <span className="material-symbols-outlined text-6xl text-[#90efef] fill-current">
-            favorite
-          </span>
-          <div className="absolute inset-0 rounded-full border-2 border-[#90efef] opacity-20 animate-ping"></div>
-        </motion.div>
-        <motion.h2
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mt-6 font-display font-bold text-xl text-white tracking-wider"
-        >
+        {/* Pulsing Clinic Logo */}
+        <div className="relative flex items-center justify-center w-24 h-24 mb-4">
+          <img 
+            src={logo} 
+            alt="Dr. Aamir Dogra Logo" 
+            className="w-18 h-18 object-contain rounded-full shadow-2xl border-2 border-white/20 bg-white relative z-10 animate-float"
+          />
+          <div className="absolute inset-0 rounded-full border-2 border-teal-400 opacity-30 animate-ping"></div>
+        </div>
+        
+        <h2 className="font-display font-black text-xl text-white tracking-wide">
           Dr. Aamir Dogra
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.7 }}
-          transition={{ delay: 0.4 }}
-          className="mt-2 font-body text-sm text-[#708ab5]"
-        >
-          Elite Pediatric &amp; Newborn Care
-        </motion.p>
+        </h2>
+        <p className="mt-1 font-body text-xs font-semibold text-teal-300">
+          Paediatrics &bull; MBChB, MRCPCH &bull; Mediways Hospital
+        </p>
       </div>
     </div>
   );

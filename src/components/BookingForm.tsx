@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, CalendarDays } from 'lucide-react';
+import { CheckCircle2, CalendarDays, Sparkles, X } from 'lucide-react';
 import upiQr from '../assets/upi-qr.jpg';
 
 export const BookingForm: React.FC = () => {
@@ -48,155 +48,157 @@ export const BookingForm: React.FC = () => {
   };
 
   return (
-    <section id="booking" className="py-12 md:py-20 bg-[#f7f9fb]">
-      <div className="max-w-7xl mx-auto px-6 md:px-16">
+    <section id="booking" className="py-14 sm:py-20 bg-gradient-to-b from-white to-[#f8fafc]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
-          className="bg-white rounded-2xl luxury-shadow overflow-hidden grid lg:grid-cols-5 border border-outline-variant/20"
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+          className="bg-white rounded-3xl shadow-xl overflow-hidden grid lg:grid-cols-12 border border-slate-100"
         >
-          {/* Side Banner (2 columns) */}
-          <div className="lg:col-span-2 bg-[#002147] p-12 text-white text-left relative flex flex-col justify-between overflow-hidden">
-            {/* Visual background element */}
-            <div className="absolute -right-16 -top-16 w-48 h-48 bg-secondary/20 rounded-full blur-3xl pointer-events-none"></div>
+          {/* Side Info Banner (5 cols) */}
+          <div className="lg:col-span-5 bg-gradient-to-br from-[#0b2545] via-[#0f3460] to-[#0b2545] p-8 sm:p-10 text-white text-left relative flex flex-col justify-between overflow-hidden">
+            {/* Visual background lights */}
+            <div className="absolute -right-16 -top-16 w-48 h-48 bg-teal-500/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute -left-16 -bottom-16 w-48 h-48 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
             <div className="relative z-10">
-              <span className="text-[#90efef] font-body text-xs font-bold uppercase tracking-widest mb-3 block">
-                Direct Booking
-              </span>
-              <h2 className="font-display font-extrabold text-3xl md:text-4xl text-white mb-6 leading-tight">
-                Schedule a Consultation
+              <div className="inline-flex items-center gap-2 bg-teal-400/20 text-teal-300 font-body text-xs font-bold px-3.5 py-1.5 rounded-full border border-teal-400/30 mb-4">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Direct OPD Booking</span>
+              </div>
+              <h2 className="font-display font-black text-2xl sm:text-3xl text-white mb-3 leading-tight">
+                Schedule a Clinic Consultation
               </h2>
-              <p className="text-[#708ab5] font-body text-base mb-6 leading-relaxed">
-                Select a preferred date and time for your visit. Our concierge team will confirm your appointment within 30 minutes.
+              <p className="text-slate-300 font-body text-xs sm:text-sm mb-6 leading-relaxed">
+                Choose a convenient date &amp; time. Your appointment details will be formatted directly for our clinic WhatsApp concierge for fast confirmation.
               </p>
 
-              {/* Payment Details Card */}
-              <div className="bg-[#f7f9fb]/5 backdrop-blur-md border border-white/10 rounded-xl p-5 mb-6 text-left">
+              {/* Consultation Fee Card */}
+              <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4 sm:p-5 mb-6 text-left">
                 <div className="flex justify-between items-center mb-3">
-                  <h4 className="font-display font-bold text-xs text-[#90efef] uppercase tracking-wider">
-                    Consultation Fee
+                  <h4 className="font-display font-extrabold text-xs text-amber-300 uppercase tracking-wider">
+                    OPD Consultation Fee
                   </h4>
-                  <span className="bg-[#ffe088]/10 text-gold-light text-xs font-bold px-2 py-0.5 rounded border border-gold-light/20">
+                  <span className="bg-amber-400 text-slate-950 text-xs font-black px-2.5 py-0.5 rounded-full">
                     ₹300
                   </span>
                 </div>
                 <div className="flex gap-4 items-center">
                   <div 
-                    className="w-16 h-16 rounded-lg overflow-hidden border border-white/20 bg-white p-1 flex-shrink-0 cursor-zoom-in group relative" 
+                    className="w-16 h-16 rounded-xl overflow-hidden border border-white/30 bg-white p-1 flex-shrink-0 cursor-zoom-in group relative shadow-md" 
                     onClick={() => setIsPayModalOpen(true)}
                   >
                     <img src={upiQr} alt="UPI QR Code" className="w-full h-full object-contain" />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-[9px] text-white font-bold font-body">
+                    <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-[9px] text-white font-bold">
                       ZOOM
                     </div>
                   </div>
                   <div className="flex-grow space-y-1">
-                    <p className="text-white text-xs font-semibold">Pay ₹300 via any UPI App</p>
-                    <p className="text-[#708ab5] text-[9px] uppercase font-bold tracking-wider">UPI ID (Click to Pay)</p>
+                    <p className="text-white text-xs font-bold">Pay ₹300 via UPI or Cash</p>
+                    <p className="text-slate-400 text-[10px] uppercase font-bold tracking-wider">UPI ID (Tap to Pay)</p>
                     <a 
                       href="upi://pay?pa=9877125925@ptsbi&pn=Dr%20Aamir%20Dogra&cu=INR&am=300"
-                      className="flex items-center justify-between gap-1.5 bg-black/25 px-2.5 py-1.5 rounded border border-white/5 hover:border-[#90efef]/40 transition-colors group/link cursor-pointer"
+                      className="flex items-center justify-between gap-1.5 bg-black/30 px-3 py-1.5 rounded-lg border border-white/10 hover:border-teal-400 transition-colors group/link cursor-pointer"
                     >
-                      <span className="text-white font-mono text-[10px] font-bold">9877125925@ptsbi</span>
-                      <span className="text-[8px] text-[#90efef] font-bold uppercase group-hover/link:underline">Pay</span>
+                      <span className="text-white font-mono text-[11px] font-bold">9877125925@ptsbi</span>
+                      <span className="text-[9px] text-teal-300 font-bold uppercase group-hover/link:underline">Pay</span>
                     </a>
                   </div>
                 </div>
               </div>
 
-              <ul className="space-y-4">
+              {/* Trust highlights */}
+              <ul className="space-y-3">
                 {[
-                  'Priority Appointments for Newborns',
-                  'Premium Concierge Check-in',
+                  'Priority Scheduling for Infants & Newborns',
+                  'Zero Waiting with Pre-Booked Slot',
+                  'Warm, Fear-Free Examination',
                 ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-3 text-white">
-                    <CheckCircle2 className="w-4 h-4 text-gold flex-shrink-0" />
-                    <span className="font-body text-xs font-semibold">{item}</span>
+                  <li key={index} className="flex items-center gap-2.5 text-xs text-slate-200 font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="mt-12 relative z-10 border-t border-[#708ab5]/20 pt-6">
-              <p className="text-xs text-[#708ab5] font-body">
-                *Note: You will be redirected to WhatsApp to confirm your slot with our care assistant.
-              </p>
+            <div className="mt-8 pt-4 border-t border-white/10 relative z-10 text-[11px] text-slate-400">
+              *Mediways Hospital, Ferozepur Road, Ludhiana.
             </div>
           </div>
 
-          {/* Form Content (3 columns) */}
-          <div className="lg:col-span-3 p-8 sm:p-12 text-left">
-            <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 gap-6">
+          {/* Form Content (7 cols) */}
+          <div className="lg:col-span-7 p-6 sm:p-10 text-left">
+            <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 gap-4 sm:gap-5">
               {/* Parent Name */}
               <div className="col-span-2 sm:col-span-1">
-                <label className="block font-body text-xs font-bold text-primary uppercase tracking-wider mb-2">
-                  Parent Name <span className="text-error">*</span>
+                <label className="block font-body text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  Parent Name <span className="text-rose-500">*</span>
                 </label>
                 <input
                   type="text"
                   required
                   value={parentName}
                   onChange={(e) => setParentName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all font-body text-sm text-[#191c1e]"
-                  placeholder="Full Name"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all font-body text-sm text-slate-800"
+                  placeholder="e.g. Gurpreet Singh"
                   id="parent-name"
                 />
               </div>
 
               {/* Child Name */}
               <div className="col-span-2 sm:col-span-1">
-                <label className="block font-body text-xs font-bold text-primary uppercase tracking-wider mb-2">
-                  Child Name <span className="text-error">*</span>
+                <label className="block font-body text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  Child Name <span className="text-rose-500">*</span>
                 </label>
                 <input
                   type="text"
                   required
                   value={childName}
                   onChange={(e) => setChildName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all font-body text-sm text-[#191c1e]"
-                  placeholder="First Name"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all font-body text-sm text-slate-800"
+                  placeholder="Child's Full Name"
                   id="child-name"
                 />
               </div>
 
               {/* Child Age */}
               <div>
-                <label className="block font-body text-xs font-bold text-primary uppercase tracking-wider mb-2">
+                <label className="block font-body text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                   Child Age
                 </label>
                 <input
                   type="text"
                   value={childAge}
                   onChange={(e) => setChildAge(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all font-body text-sm text-[#191c1e]"
-                  placeholder="e.g. 2 Years / 6 Months"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all font-body text-sm text-slate-800"
+                  placeholder="e.g. 2 Years / 4 Months"
                   id="child-age"
                 />
               </div>
 
               {/* Phone Number */}
               <div>
-                <label className="block font-body text-xs font-bold text-primary uppercase tracking-wider mb-2">
-                  Phone Number <span className="text-error">*</span>
+                <label className="block font-body text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  Phone Number <span className="text-rose-500">*</span>
                 </label>
                 <input
                   type="tel"
                   required
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all font-body text-sm text-[#191c1e]"
-                  placeholder="+91 XXXXX XXXXX"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all font-body text-sm text-slate-800"
+                  placeholder="+91 98771 25925"
                   id="phone-number"
                 />
               </div>
 
               {/* Preferred Date */}
               <div>
-                <label className="block font-body text-xs font-bold text-primary uppercase tracking-wider mb-2">
-                  Preferred Date <span className="text-error">*</span>
+                <label className="block font-body text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  Preferred Date <span className="text-rose-500">*</span>
                 </label>
                 <input
                   type="date"
@@ -204,124 +206,123 @@ export const BookingForm: React.FC = () => {
                   min={getTodayDate()}
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all font-body text-sm text-[#191c1e]"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all font-body text-sm text-slate-800"
                   id="preferred-date"
                 />
               </div>
 
               {/* Preferred Time */}
               <div>
-                <label className="block font-body text-xs font-bold text-primary uppercase tracking-wider mb-2">
-                  Preferred Time <span className="text-error">*</span>
+                <label className="block font-body text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  Preferred Time Slot <span className="text-rose-500">*</span>
                 </label>
                 <select
                   value={time}
                   onChange={(e) => setTime(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all font-body text-sm text-[#191c1e] appearance-none"
-                  style={{ backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2374777f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>")`, backgroundPosition: 'right 16px center', backgroundRepeat: 'no-repeat', backgroundSize: '16px' }}
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all font-body text-sm text-slate-800"
                   id="preferred-time"
                 >
-                  <option value="Morning (10 AM - 1 PM)">Morning (10 AM - 1 PM)</option>
-                  <option value="Afternoon (1 PM - 4 PM)">Afternoon (1 PM - 4 PM)</option>
+                  <option value="Morning (10 AM - 1 PM)">Morning (10:00 AM - 1:00 PM)</option>
+                  <option value="Afternoon (1 PM - 4 PM)">Afternoon (1:00 PM - 4:00 PM)</option>
                 </select>
               </div>
 
               {/* Reason for Visit */}
               <div className="col-span-2">
-                <label className="block font-body text-xs font-bold text-primary uppercase tracking-wider mb-2">
+                <label className="block font-body text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                   Reason for Visit
                 </label>
                 <textarea
                   value={reason}
                   onChange={(e) => setReason(e.target.value)}
                   rows={2}
-                  className="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all font-body text-sm text-[#191c1e] resize-none"
-                  placeholder="Brief description of symptoms, vaccination queries, or checkups..."
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all font-body text-sm text-slate-800 resize-none"
+                  placeholder="e.g. Vaccination, fever, growth checkup, newborn screening..."
                   id="reason-for-visit"
                 />
               </div>
 
-              {/* Consultation Payment Preference */}
-              <div className="col-span-2 bg-[#f7f9fb] p-4 rounded-xl border border-outline-variant/30">
-                <label className="block font-body text-xs font-bold text-primary uppercase tracking-wider mb-2">
-                  Consultation Fee: ₹300 (Select Payment Option)
+              {/* Payment Mode Toggle */}
+              <div className="col-span-2 p-3.5 bg-slate-50 rounded-2xl border border-slate-200/80">
+                <label className="block font-body text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                  Payment Option (Fee: ₹300)
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <label className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all ${
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <label className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
                     paymentMode === 'clinic' 
-                      ? 'border-secondary bg-white shadow-sm ring-1 ring-secondary/30' 
-                      : 'border-outline-variant/30 hover:bg-white'
+                      ? 'border-teal-500 bg-white shadow-xs ring-2 ring-teal-500/10' 
+                      : 'border-slate-200 hover:bg-white'
                   }`}>
                     <input 
                       type="radio" 
                       name="paymentMode" 
                       checked={paymentMode === 'clinic'} 
                       onChange={() => setPaymentMode('clinic')}
-                      className="accent-[#006a6a]"
+                      className="accent-teal-600"
                     />
                     <div className="text-left">
-                      <div className="font-body text-xs font-bold text-primary">Pay at Clinic</div>
-                      <div className="text-[10px] text-on-surface-variant">Pay ₹300 during visit (Cash/UPI)</div>
+                      <div className="font-body text-xs font-bold text-primary">Pay at Clinic (₹300)</div>
+                      <div className="text-[10px] text-slate-500">Pay in Cash or UPI at hospital counter</div>
                     </div>
                   </label>
 
-                  <label className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all ${
+                  <label className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
                     paymentMode === 'upi' 
-                      ? 'border-secondary bg-white shadow-sm ring-1 ring-secondary/30' 
-                      : 'border-outline-variant/30 hover:bg-white'
+                      ? 'border-teal-500 bg-white shadow-xs ring-2 ring-teal-500/10' 
+                      : 'border-slate-200 hover:bg-white'
                   }`}>
                     <input 
                       type="radio" 
                       name="paymentMode" 
                       checked={paymentMode === 'upi'} 
                       onChange={() => setPaymentMode('upi')}
-                      className="accent-[#006a6a]"
+                      className="accent-teal-600"
                     />
                     <div className="text-left">
                       <div className="font-body text-xs font-bold text-primary">Pay Online via UPI</div>
-                      <div className="text-[10px] text-on-surface-variant">Instant QR / 9877125925@ptsbi</div>
+                      <div className="text-[10px] text-slate-500">Fast QR / 9877125925@ptsbi</div>
                     </div>
                   </label>
                 </div>
               </div>
 
               {/* Submit Button */}
-              <div className="col-span-2 mt-1">
+              <div className="col-span-2 mt-2">
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 bg-primary-container text-white py-4 rounded-full font-display font-bold text-base hover:bg-[#003166] transition-all duration-300 active:scale-[0.98] shadow-md hover:shadow-lg cursor-pointer"
+                  className="w-full flex items-center justify-center gap-2.5 bg-gradient-to-r from-emerald-600 to-teal-700 text-white py-4 rounded-full font-display font-black text-sm sm:text-base hover:from-emerald-700 hover:to-teal-800 transition-all duration-200 active:scale-[0.98] shadow-lg shadow-emerald-700/20 cursor-pointer"
                   id="booking-submit-btn"
                 >
-                  <CalendarDays className="w-5 h-5 text-gold-light" />
-                  <span>Confirm Booking via WhatsApp</span>
+                  <CalendarDays className="w-5 h-5 text-amber-200" />
+                  <span>Confirm on WhatsApp (Instant Slot)</span>
                 </button>
-                <p className="text-center text-[11px] text-on-surface-variant mt-2 font-body">
-                  No pre-registration charges. You will be redirected to WhatsApp to confirm your slot.
+                <p className="text-center text-[11px] text-slate-500 mt-2 font-medium">
+                  Direct WhatsApp redirection &bull; Quick confirmation by clinic team
                 </p>
               </div>
             </form>
           </div>
         </motion.div>
       </div>
+
       {/* QR Code Lightbox Modal */}
       {isPayModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-6" onClick={() => setIsPayModalOpen(false)}>
-          <div className="relative max-w-sm w-full bg-white rounded-2xl p-6 text-center luxury-shadow animate-scale-up" onClick={(e) => e.stopPropagation()}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4" onClick={() => setIsPayModalOpen(false)}>
+          <div className="relative max-w-sm w-full bg-white rounded-3xl p-6 text-center shadow-2xl" onClick={(e) => e.stopPropagation()}>
             <button 
               onClick={() => setIsPayModalOpen(false)}
-              className="absolute top-4 right-4 text-primary hover:text-secondary p-1"
+              className="absolute top-4 right-4 text-slate-400 hover:text-slate-800 p-1"
             >
-              <span className="material-symbols-outlined text-2xl font-bold">close</span>
+              <X className="w-5 h-5" />
             </button>
-            <h3 className="font-display font-extrabold text-lg text-[#002147] mb-1">Dr. Aamir Dogra</h3>
-            <p className="text-sm font-bold text-secondary font-body mb-2">Consultation Fee: ₹300</p>
-            <p className="text-xs text-on-surface-variant font-body mb-4">Scan with any UPI App to pay</p>
-            <div className="max-w-[260px] mx-auto rounded-xl border border-outline-variant/35 overflow-hidden p-2 bg-[#f7f9fb] mb-4">
+            <h3 className="font-display font-extrabold text-lg text-primary mb-1">Dr. Aamir Dogra</h3>
+            <p className="text-xs font-bold text-teal-700 font-body mb-3">Consultation Fee: ₹300</p>
+            <div className="max-w-[240px] mx-auto rounded-2xl border border-slate-200 overflow-hidden p-2 bg-slate-50 mb-4 shadow-inner">
               <img src={upiQr} alt="UPI QR Code Full" className="w-full h-auto" />
             </div>
             <a 
               href="upi://pay?pa=9877125925@ptsbi&pn=Dr%20Aamir%20Dogra&cu=INR&am=300"
-              className="block text-sm font-mono font-bold text-primary bg-[#f7f9fb] hover:bg-secondary-container/20 py-2.5 rounded-lg border border-outline-variant/20 transition-colors cursor-pointer"
+              className="block text-xs font-mono font-bold text-slate-900 bg-amber-50 hover:bg-amber-100 py-2.5 rounded-xl border border-amber-200 transition-colors cursor-pointer"
             >
               9877125925@ptsbi (Pay ₹300)
             </a>
